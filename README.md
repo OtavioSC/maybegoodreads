@@ -2,7 +2,7 @@
 
 <br />
 <div align="center">
-     <h1> Library only json <h1>
+     <h1> Maybe Good Reads <h1>
           <!-- <img src=""></img> -->
   </p>
 </div>
