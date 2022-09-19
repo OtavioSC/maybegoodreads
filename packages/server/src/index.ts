@@ -1,13 +1,8 @@
-import Koa from "koa";
+import app from './server'
 
-const app = new Koa();
+// change to env variable
+const PORT = 4001
 
-app.use(async ctx => {
-    ctx.body = 'API Graphql'
-})
-
-app.listen(4001);
-
-app.on('error', err => {
-    console.error('server error', err)
+app.listen(PORT, async () => {
+    console.log('Server is running')
 })
