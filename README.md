@@ -3,7 +3,7 @@
 <br />
 <div align="center">
      <h1> Maybe Good Reads <h1>
-          <!-- <img src=""></img> -->
+          <img src="./project.png"></img>
   </p>
 </div>
 
