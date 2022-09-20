@@ -1,4 +1,4 @@
-import { GraphQLNonNull, GraphQLObjectType, GraphQLString, GraphQLFloat} from 'graphql';
+import { GraphQLInt, GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString, GraphQLFloat, ThunkObjMap, GraphQLInputFieldConfig} from 'graphql';
 import { connectionDefinitions, globalIdField } from 'graphql-relay';
 
 const BookType = new GraphQLObjectType({
@@ -32,6 +32,29 @@ const BookType = new GraphQLObjectType({
     }
   }),
 });
+
+export const BookInputType: ThunkObjMap<GraphQLInputFieldConfig> = {
+  title: {
+    type: GraphQLString,
+    description: `Book title`
+  },
+  description: {
+    type: GraphQLString,
+    description: `Book description`
+  },
+  author: {
+    type: GraphQLString,
+    description: `Book author`
+  },
+  score: {
+    type: GraphQLFloat,
+    description: `Book score`
+  },
+  image: {
+    type: GraphQLString,
+    description: `Book image`
+  },
+}
 
 const { connectionType: BookConnection, edgeType: BookEdge } =
   connectionDefinitions({

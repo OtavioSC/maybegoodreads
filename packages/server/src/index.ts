@@ -1,8 +1,12 @@
 import app from './server'
+import dotenv from 'dotenv'
+import { connection } from './database/connection'
 
+dotenv.config()
 // change to env variable
-const PORT = 4001
 
-app.listen(PORT, async () => {
+app.listen(process.env.PORT, async () => {
+    await connection();
+
     console.log('Server is running')
 })
