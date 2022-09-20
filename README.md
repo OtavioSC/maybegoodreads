@@ -8,22 +8,33 @@
 </div>
 
 ## Stack
-  - [ ] [Typescript](https://www.typescriptlang.org/)
-  - [ ] [Node.js](https://nodejs.org/en/)
-  - [ ] [Koa.js](https://koajs.com/)
-  - [ ] [MongoDB](https://www.mongodb.com/)
-  - [ ] [GraphQL](https://nodejs.org/en/)
+  - [x] [Typescript](https://www.typescriptlang.org/)
+  - [x] [Node.js](https://nodejs.org/en/)
+  - [x] [Koa.js](https://koajs.com/)
+  - [x] [MongoDB](https://www.mongodb.com/)
+  - [x] [GraphQL](https://nodejs.org/en/)
   - [ ] [Relay](https://relay.dev/)
   - [ ] [Type-graqhql](https://typegraphql.com/)
   - [ ] [React.js](https://reactjs.org)
   - [ ] [Ant Design](https://ant.design/)
 
 ## How to run Backend
-    // Install all dependencies
+Navigate into the directory
+
+    cd packages/server
+
+Install all dependencies
+
+    yarn install
     
-    // Run project
+Create .env file and fill all the variables
+
+    mv .env-example .env
+
+Run the server
+
+    yarn dev
     
-    // API URL
 
 ## How to run Frontend
     // Install all dependencies
@@ -37,12 +48,12 @@
 
 ## Pipeline
 ### Backend
-  - [ ] GraphQL Schema
-  - [ ] Create Mutation
+  - [x] GraphQL Schema
+  - [x] Create Mutation
   - [ ] Update Mutation
-  - [ ] Delete Mutation
-  - [ ] FindAll Query
-  - [ ] FindById Query
+  - [x] Delete Mutation
+  - [x] FindAll Query
+  - [x] FindById Query
   - [ ] Authentication
 ### Frontend
   - [ ] Homepage
@@ -54,7 +65,7 @@
   - [ ] Data validation
   - [ ] Search engine
 ### Database
-  - [ ] MongoDB Connection
+  - [x] MongoDB Connection
 ### Docs
   - [ ] Docusaurus
   
