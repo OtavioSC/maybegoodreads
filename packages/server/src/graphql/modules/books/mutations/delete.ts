@@ -1,30 +1,44 @@
-import { mutationWithClientMutationId } from 'graphql-relay';
-import { GraphQLNonNull, GraphQLID } from 'graphql'
-import { Book, BookModel } from '../models/model'
-import { BookType } from '../models/types';
-
-export const BookDelete = mutationWithClientMutationId({
-  name: 'BookDelete',
-  inputFields: {
-    id: {
+import {
+    GraphQLID,
+    GraphQLString,
+    GraphQLNonNull
+  } from 'graphql'
+  import { BookModel } from '../models/model'
+  import { fromGlobalId, mutationWithClientMutationId } from 'graphql-relay'
+  
+  export const BookDelete = mutationWithClientMutationId({
+    name: 'bookDelete',
+    inputFields: {
+      id: {
         type: new GraphQLNonNull(GraphQLID)
-    }
-  },
-  outputFields: {
-    book: {
-        type: BookType,
-        resolve: response => response.book
-    }
-  },
-  mutateAndGetPayload: async({ _id }: Book, ctx) => {
-    try {
-      const book = await BookModel.findOneAndDelete(_id)
-      return book
+      }
+    },
+    outputFields: {
+        deletedCount: {
+            type: GraphQLString,
+            resolve: response => response.deletedCount
+          },
+    },
+    mutateAndGetPayload: async ({ id }, ctx) => {
+  
+      const bookToFind = await BookModel.findById(fromGlobalId(id).id)
+  
+      if (!bookToFind) {
+        return {
+          error: 'This Book does not exist on database'
+        }
+      }
 
-    } catch {
-      return {
-        error: 'Invalid id'
+      try {
+        const response = await BookModel.deleteOne({
+          _id: bookToFind.id
+        })
+  
+        return response
+      } catch {
+        return { 
+            error: "Error"
+         }
       }
     }
-  }
-});
+  })
