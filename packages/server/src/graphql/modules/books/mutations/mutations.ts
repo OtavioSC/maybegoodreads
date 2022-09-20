@@ -1,5 +1,5 @@
 
 import { BookCreate } from './create'
-import { BookRemove } from './delete'
+import { BookDelete } from './delete'
 
-export const mutations = { BookCreate, BookRemove }
+export const mutations = { BookCreate, BookDelete }

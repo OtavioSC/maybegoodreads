@@ -1,10 +1,10 @@
-import { mutationWithClientMutationId, fromGlobalId } from 'graphql-relay';
+import { mutationWithClientMutationId } from 'graphql-relay';
 import { GraphQLNonNull, GraphQLID } from 'graphql'
 import { Book, BookModel } from '../models/model'
-import { BookType, BookInputType } from '../models/types';
+import { BookType } from '../models/types';
 
-export const BookRemove = mutationWithClientMutationId({
-  name: 'BookRemove',
+export const BookDelete = mutationWithClientMutationId({
+  name: 'BookDelete',
   inputFields: {
     id: {
         type: new GraphQLNonNull(GraphQLID)

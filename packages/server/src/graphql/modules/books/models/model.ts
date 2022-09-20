@@ -1,7 +1,8 @@
 import mongoose, {Schema} from "mongoose";
+import { ObjectId } from "mongodb";
 
 export type Book = {
-    _id: mongoose.Types.ObjectId
+    _id: ObjectId
     title: string
     description: string
     author: string
