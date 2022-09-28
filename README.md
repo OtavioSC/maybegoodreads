@@ -17,6 +17,9 @@
   - [ ] [Type-graqhql](https://typegraphql.com/)
   - [ ] [React.js](https://reactjs.org)
   - [ ] [Ant Design](https://ant.design/)
+  
+## Deploy
+    // In progress...
 
 ## How to run Backend
 Navigate into the directory
@@ -37,11 +40,17 @@ Run the server
     
 
 ## How to run Frontend
-    // Install all dependencies
-    
-    // Run project
-    
-    // API URL
+Navigate into the directory
+
+    cd packages/web
+
+Install all dependencies
+
+    yarn install
+
+Run the server
+
+    yarn dev
     
 ## Files architecture
     // In progress...
@@ -50,7 +59,7 @@ Run the server
 ### Backend
   - [x] GraphQL Schema
   - [x] Create Mutation
-  - [ ] Update Mutation
+  - [x] Update Mutation
   - [x] Delete Mutation
   - [x] FindAll Query
   - [x] FindById Query
