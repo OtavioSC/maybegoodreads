@@ -1,30 +1,26 @@
 import { GraphQLNonNull, GraphQLObjectType, GraphQLString, GraphQLFloat, ThunkObjMap, GraphQLInputFieldConfig} from 'graphql';
 import { connectionDefinitions, globalIdField } from 'graphql-relay';
 
-const BookType = new GraphQLObjectType({
-  name: 'Book',
-  description: 'Book Type',
+const UserType = new GraphQLObjectType({
+  name: 'User',
+  description: 'User Type',
   fields: () => ({
-    id: globalIdField('Book'),
-    title: {
+    id: globalIdField('User'),
+    name: {
       type: new GraphQLNonNull(GraphQLString),
-      resolve: (book) => book.title,
+      resolve: (user) => user.name,
     },
-    description: {
+    email: {
       type: new GraphQLNonNull(GraphQLString),
-      resolve: (book) => book.description,
+      resolve: (user) => user.email,
     },
-    author: {
+    username: {
       type: new GraphQLNonNull(GraphQLString),
-      resolve: (book) => book.author,
+      resolve: (user) => user.username,
     },
-    score: {
-      type: new GraphQLNonNull(GraphQLFloat),
-      resolve: (book) => book.score,
-    },
-    image: {
+    password: {
       type: new GraphQLNonNull(GraphQLString),
-      resolve: (book) => book.image,
+      resolve: (user) => user.password,
     },
     createdAt: {
       type: new GraphQLNonNull(GraphQLString),
@@ -33,7 +29,7 @@ const BookType = new GraphQLObjectType({
   }),
 });
 
-export const BookInputType: ThunkObjMap<GraphQLInputFieldConfig> = {
+export const UserInputType: ThunkObjMap<GraphQLInputFieldConfig> = {
   title: {
     type: GraphQLString,
     description: `Book title`
@@ -56,9 +52,9 @@ export const BookInputType: ThunkObjMap<GraphQLInputFieldConfig> = {
   },
 }
 
-const { connectionType: BookConnection, edgeType: BookEdge } =
+const { connectionType: UserConnection, edgeType: UserEdge } =
   connectionDefinitions({
-    nodeType: BookType,
+    nodeType: UserType,
   });
 
-export { BookConnection, BookEdge, BookType };
+export { UserConnection, UserEdge, UserType };

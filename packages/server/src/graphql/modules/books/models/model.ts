@@ -2,13 +2,13 @@ import mongoose, {Schema} from "mongoose";
 import { ObjectId } from "mongodb";
 
 export type Book = {
-    _id: ObjectId
-    title: string
-    description: string
-    author: string
-    score: number
-    image?: string
-    createdAt: Date
+   _id: ObjectId
+   title: string
+   description: string
+   author: string
+   score: number
+   image?: string
+   createdAt: Date
 }
 
 const BookSchema = new Schema<Book>({
