@@ -1,19 +1,40 @@
 import {
     GraphQLID,
-    GraphQLNonNull
+    GraphQLNonNull,
+    GraphQLString,
+    GraphQLFloat
 } from 'graphql'
-import { mutationWithClientMutationId } from 'graphql-relay';
+import { mutationWithClientMutationId, fromGlobalId } from 'graphql-relay';
 import { Book, BookModel } from '../models/model'
 import { BookType, BookInputType } from '../models/types';
 
 export const BookUpdate = mutationWithClientMutationId({
   name: 'BookUpdate',
   inputFields: {
-    id: {
-        type: new GraphQLNonNull(GraphQLID)
+      id: {
+        type: new GraphQLNonNull(GraphQLID),
+        description: `Book Id`
       },
-       ...BookInputType
-    
+      title: {
+        type: GraphQLString,
+        description: `Book title`
+      },
+      description: {
+        type: GraphQLString,
+        description: `Book description`
+      },
+      author: {
+        type: GraphQLString,
+        description: `Book author`
+      },
+      score: {
+        type: GraphQLFloat,
+        description: `Book score`
+      },
+      image: {
+        type: GraphQLString,
+        description: `Book image`
+      },
   },
   outputFields: {
     book: {
@@ -21,22 +42,23 @@ export const BookUpdate = mutationWithClientMutationId({
         resolve: response => response.book
     }
   },
-  mutateAndGetPayload: async({ ...BookInputType }: Book, ctx) => {
+
+  mutateAndGetPayload: async({ ...book }, ctx) => {
+    const bookToFind = await BookModel.findById(fromGlobalId(book.id).id)
 
     try {
-        const bookUpdated = await BookModel.findByIdAndUpdate(BookInputType._id, {
-            title: BookInputType.title,
-            description: BookInputType.description,
-            author: BookInputType.author,
-            score: BookInputType.score,
-            image: BookInputType.image,
-        });
+      const bookToUpdate = await BookModel.findByIdAndUpdate(bookToFind!._id, {
+        $set: {
+          ...book
+        }
+      }, { new: true })
+
       return {
-        book: bookUpdated
+        book: bookToUpdate
       }
-    } catch {
+    } catch (error) {
       return {
-        error: 'Invalid book'
+        error: (error as Error).message
       }
     }
   }
