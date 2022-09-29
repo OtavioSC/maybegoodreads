@@ -1,21 +1,27 @@
-import { Menu } from 'antd';
 import './index.css'
 
 import logo from '../../assets/logo.png'
 
-export default function Navbar(){
+import { Outlet, Link } from "react-router-dom";
+
+export default function Navbar(props: {login?: boolean}){
+   const { login } = props;
+
     return(
        <header className='menu'>
          <div className='menu-container'>
-            <a className="menu-logo" href="#"><img src={logo} alt="maybeGoodReads"/></a>
+            <Link to="/login" className="menu-logo"><img src={logo} alt="maybeGoodReads"/></Link>
             <nav className='menu-nav'>
-               <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">My Books</a></li>
-                  <li><a href="#">Profile</a></li>
-               </ul>
+               { !login ? (<ul>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/books">My Books</Link></li>
+                  <li><Link to="/profile">Profile</Link></li>
+               </ul>) : (<ul>
+                  <li><Link to="/signup">Sign Up</Link></li>
+               </ul>)}
             </nav>
          </div>
+         <Outlet />
        </header>
     )
 }

@@ -1,0 +1,14 @@
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content {
+  max-height: 500px;
+  max-width: 400px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}

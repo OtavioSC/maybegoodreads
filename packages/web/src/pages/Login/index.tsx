@@ -4,11 +4,16 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from "../../components/Navbar"
 import Form from "../../components/Form"
 
-function Books() {
+import './index.css'
+
+function Login() {
   return(
     <ChakraProvider>
+      <div className="content">
+        <Form login={true}/>
+      </div>
     </ChakraProvider>
   )
 }
 
-export default Books
+export default Login;

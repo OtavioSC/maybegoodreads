@@ -1,11 +1,21 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Books from './pages/Books';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 import Navbar from './components/Navbar';
-import './App.css'
 
 export default function App () {
   return(
-    <>
-      <Navbar/>
-    </>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Navbar login/>}>
+          <Route path="books" element={<Books />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 };
