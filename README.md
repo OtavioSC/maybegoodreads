@@ -3,7 +3,7 @@
 <br />
 <div align="center">
      <h1> Maybe Good Reads <h1>
-          <img src="./project.png"></img>
+          <img width="400px"src="./imgs/signup.png"></img>
   </p>
 </div>
 
@@ -13,11 +13,11 @@
   - [x] [Koa.js](https://koajs.com/)
   - [x] [MongoDB](https://www.mongodb.com/)
   - [x] [GraphQL](https://nodejs.org/en/)
-  - [ ] [Relay](https://relay.dev/)
-  - [ ] [Type-graqhql](https://typegraphql.com/)
-  - [ ] [React.js](https://reactjs.org)
-  - [ ] [Ant Design](https://ant.design/)
-  
+  - [x] [Relay](https://relay.dev/)
+  - [x] [React.js](https://reactjs.org)
+  - [x] [Chakra UI](https://ant.design/)
+<br/>
+
 ## Deploy
     // In progress...
 
@@ -80,6 +80,13 @@ Run the server
   
 ## Queries
     // In progress...
+
+## Prototype
+
+<div align="center">
+    <img src="./imgs/project.png"></img>
+</div>
+<br/>
 
 ## Contact
 
