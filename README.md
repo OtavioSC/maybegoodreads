@@ -3,7 +3,7 @@
 <br />
 <div align="center">
      <h1> 📚 Maybe Good Reads <h1>
-          <img width="70%"src="./imgs/signup.png"></img>
+          <img width="70%"src="./imgs/screen.png"></img>
   </p>
 </div>
 
