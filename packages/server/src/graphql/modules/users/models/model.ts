@@ -5,7 +5,6 @@ export type User = {
   _id: ObjectId
   name: string
   email: string
-  username: string
   password: string
   createdAt: Date
 }
@@ -16,11 +15,6 @@ const UserSchema = new Schema<User>({
     required: true
   },
   email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  username: {
     type: String,
     required: true,
     unique: true

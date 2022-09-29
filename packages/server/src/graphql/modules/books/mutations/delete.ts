@@ -24,21 +24,15 @@ import {
       const bookToFind = await BookModel.findById(fromGlobalId(id).id)
   
       if (!bookToFind) {
-        return {
-          error: 'This Book does not exist on database'
-        }
+        throw new Error('This book does not exist on database')
       }
 
       try {
-        const response = await BookModel.deleteOne({
-          _id: bookToFind.id
-        })
-  
+        const response = await BookModel.deleteOne({ _id: bookToFind.id })
         return response
+
       } catch {
-        return { 
-            error: "Error"
-         }
+        throw new Error('Invalid book')
       }
     }
   })

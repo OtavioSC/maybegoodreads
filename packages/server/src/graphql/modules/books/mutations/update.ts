@@ -57,9 +57,7 @@ export const BookUpdate = mutationWithClientMutationId({
         book: bookToUpdate
       }
     } catch (error) {
-      return {
-        error: (error as Error).message
-      }
+      throw new Error('Error to update')
     }
   }
 });

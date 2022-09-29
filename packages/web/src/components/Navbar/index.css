@@ -12,6 +12,7 @@ a.menu-logo {
 .menu {
     background: #F4F1EA;
     padding: 20px 0;
+    max-height: 100px;
 }
 
 .menu-container {

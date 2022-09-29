@@ -21,9 +21,7 @@ export const BookCreate = mutationWithClientMutationId({
         book: document
       }
     } catch {
-      return {
-        error: 'Invalid book'
-      }
+      throw new Error('Invalid book')
     }
   }
 });

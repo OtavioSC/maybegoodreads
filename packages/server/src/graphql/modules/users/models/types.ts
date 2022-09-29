@@ -30,25 +30,17 @@ const UserType = new GraphQLObjectType({
 });
 
 export const UserInputType: ThunkObjMap<GraphQLInputFieldConfig> = {
-  title: {
+  name: {
     type: GraphQLString,
-    description: `Book title`
+    description: `User name`
   },
-  description: {
+  email: {
     type: GraphQLString,
-    description: `Book description`
+    description: `User email`
   },
-  author: {
+  password: {
     type: GraphQLString,
-    description: `Book author`
-  },
-  score: {
-    type: GraphQLFloat,
-    description: `Book score`
-  },
-  image: {
-    type: GraphQLString,
-    description: `Book image`
+    description: `User password`
   },
 }
 

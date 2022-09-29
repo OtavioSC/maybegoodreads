@@ -14,6 +14,6 @@ export const book = {
         }
     },
     resolve: async (_ : any, args: {id: string }) => {
-        return await BookModel.findOne({ _id: fromGlobalId(args.id).id });
+        await BookModel.findOne({ _id: fromGlobalId(args.id).id });
     }
 }
