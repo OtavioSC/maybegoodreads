@@ -2,8 +2,8 @@
 
 <br />
 <div align="center">
-     <h1> Maybe Good Reads <h1>
-          <img width="400px"src="./imgs/signup.png"></img>
+     <h1> 📚 Maybe Good Reads <h1>
+          <img width="70%"src="./imgs/signup.png"></img>
   </p>
 </div>
 
@@ -65,11 +65,11 @@ Run the server
   - [x] FindById Query
   - [ ] Authentication
 ### Frontend
-  - [ ] Homepage
+  - [x] Homepage
   - [ ] Create bookshelf page
-  - [ ] Create form page
+  - [x] Create form page
   - [ ] Create book individual page generator
-  - [ ] Ant Design
+  - [x] Chakra UI
   - [ ] Relay
   - [ ] Data validation
   - [ ] Search engine
