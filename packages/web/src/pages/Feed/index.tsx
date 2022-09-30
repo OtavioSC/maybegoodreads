@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 import Navbar from "../../components/Navbar"
 
-function Books() {
+function Feed() {
   return(
     <ChakraProvider>
       <Navbar/>
@@ -11,4 +11,4 @@ function Books() {
   )
 }
 
-export default Books
+export default Feed

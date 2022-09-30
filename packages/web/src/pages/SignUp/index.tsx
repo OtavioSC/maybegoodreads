@@ -10,8 +10,8 @@ import './index.css'
 function SignUp() {
     return(
       <ChakraProvider>
-        <div className="content">
-          <Form login={false}/>
+        <div className='content'>
+          <Form type='signup'/>
         </div>
       </ChakraProvider>
     )

@@ -1,4 +1,5 @@
 import React, { ReactPropTypes } from 'react'
+import { Link } from 'react-router-dom';
 
 import {
     FormControl,
@@ -13,21 +14,26 @@ import logo from '../../assets/logo.png'
 
 import './index.css';
 
-export default function Form(props: { login?: boolean;}) {
-    const { login } = props;
+export default function Form(props: { type?: string;}) {
+    const { type } = props;
 
-    return(
-        <>
-        { login ? (
-        <FormControl className='form' isRequired>
+        if (type === 'login') {
+          return (
+            <FormControl className='form' isRequired>
             <h1 className='title'>Login</h1>
-            <FormLabel className="label" style={{ marginTop: "10px"}}>Email</FormLabel>
-                <Input className="input" placeholder='Email' />
-            <FormLabel className="label" style={{ marginTop: "10px"}}>Password</FormLabel>
-                <Input className="input" placeholder='Password' />
-                <Button className="button" colorScheme='orange' variant='outline'>Login</Button>
-        </FormControl> )
-        : ( 
+                <FormLabel className="label" style={{ marginTop: "10px"}}>Email</FormLabel>
+                    <Input className="input" placeholder='Email' />
+                <FormLabel className="label" style={{ marginTop: "10px"}}>Password</FormLabel>
+                    <Input className="input" placeholder='Password' />
+
+                    <Button className="button" colorScheme='brown' variant='outline'>Submit</Button>
+                    <Button className="button" variant='link'><Link to="/forgot">Forgot password?</Link></Button>
+            </FormControl> 
+          )
+        } 
+        
+       else if (type === 'signup') {
+            return (
                 <FormControl className='form' isRequired>
                 <h1 className='title'>Create Account</h1>
                 <FormLabel className="label">Your Name</FormLabel>
@@ -42,9 +48,28 @@ export default function Form(props: { login?: boolean;}) {
                 <FormLabel className="label">Re-enter password</FormLabel>
                     <Input className="input" placeholder='Re-enter password' />
 
-                    <Button className="button" colorScheme='orange' variant='outline'>Create Account</Button>
+                    <Button className="button" colorScheme='brown' variant='outline'>Create Account</Button>
+                    <Button className="button" variant='link'><Link to="/">Back to login</Link></Button>
                 </FormControl>
-         )}
-        </>
-    )
+            )
+        }
+
+       else if (type === 'forgot') {
+            return (
+              <FormControl className='form' isRequired>
+              <h1 className='title'>Create new password</h1>
+                  <FormLabel className="label" style={{ marginTop: "10px"}}>Email</FormLabel>
+                      <Input className="input" placeholder='Email' />
+                  <FormLabel className="label" style={{ marginTop: "10px"}}>New password</FormLabel>
+                      <Input className="input" placeholder='Password' />
+                      <Button className="button" colorScheme='brown' variant='outline'>Submit</Button>
+                      <Button className="button" variant='link'><Link to="/">Back to login</Link></Button>
+              </FormControl> 
+            )
+      } 
+      else {
+        return (
+            <h1>Please add a validate form type</h1>
+        )
+      }
 }

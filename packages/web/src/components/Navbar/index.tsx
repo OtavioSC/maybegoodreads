@@ -10,12 +10,13 @@ export default function Navbar(props: {login?: boolean}){
     return(
        <header className='menu'>
          <div className='menu-container'>
-            <Link to="/login" className="menu-logo"><img src={logo} alt="maybeGoodReads"/></Link>
+            <a className="menu-logo"><img src={logo} alt="maybeGoodReads"/></a>
             <nav className='menu-nav'>
                { !login ? (<ul>
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/books">My Books</Link></li>
-                  <li><Link to="/profile">Profile</Link></li>
+                  <li><Link to="/feed">Feed</Link></li>
+                  <li><Link to="/">Logout</Link></li>
                </ul>) : (<ul>
                   <li><Link to="/signup">Sign Up</Link></li>
                </ul>)}

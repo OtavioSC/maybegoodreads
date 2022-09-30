@@ -4,17 +4,16 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from "../../components/Navbar"
 import Form from "../../components/Form"
 
-import './index.css'
 
-function Login() {
+function NotFound() {
   return(
     <ChakraProvider>
       <Navbar login/>
       <div className='content'>
-        <Form type='login'/>
+        <h1> Página não encontrada 🪲 </h1>
       </div>
     </ChakraProvider>
   )
 }
 
-export default Login;
+export default NotFound;

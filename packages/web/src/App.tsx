@@ -1,21 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, {useState}from 'react';
+import { BrowserRouter } from "react-router-dom";
 
-import Books from './pages/Books';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import Navbar from './components/Navbar';
+import Router from './routes/routes';
 
 export default function App () {
+
+ const [isLoggedIn, setisLoggedIn] = useState(true);
+ const logIn = () => { setisLoggedIn(true); };
   return(
     <BrowserRouter>
-      <Routes>
-          <Route path="/" element={<Navbar login/>}>
-          <Route path="books" element={<Books />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="login" element={<Login />} />
-        </Route>
-      </Routes>
+      <Router/>
     </BrowserRouter>
   )
 };
