@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 
+import Home from '../pages/Home'
 import Books from '../pages/Books';
 import Feed from '../pages/Feed';
 import Login from '../pages/Login';
@@ -14,6 +15,7 @@ export default function Router () {
       <Routes>
             <Route path="/"/>
             <Route index element={<Login />} />
+            <Route path="home" element={<Home />}  />
             <Route path="signup" element={<SignUp />} />
             <Route path="books"element={<Books />} />
             <Route path="feed"element={<Feed />} />

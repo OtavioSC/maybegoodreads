@@ -13,7 +13,7 @@ export default function Navbar(props: {login?: boolean}){
             <a className="menu-logo"><img src={logo} alt="maybeGoodReads"/></a>
             <nav className='menu-nav'>
                { !login ? (<ul>
-                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/home">Home</Link></li>
                   <li><Link to="/books">My Books</Link></li>
                   <li><Link to="/feed">Feed</Link></li>
                   <li><Link to="/">Logout</Link></li>

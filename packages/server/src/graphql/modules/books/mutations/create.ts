@@ -1,5 +1,4 @@
 import { mutationWithClientMutationId } from 'graphql-relay';
-
 import { Book, BookModel } from '../models/model'
 import { BookType, BookInputType } from '../models/types';
 
